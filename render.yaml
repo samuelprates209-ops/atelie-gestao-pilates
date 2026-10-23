@@ -3,7 +3,7 @@ services:
     name: atelie-gestao-pilates
     runtime: python
     plan: free
-    buildCommand: python -m zipfile -e app-source.zip . && pip install -r Atelie_Gestao_Pilates/requirements.txt
+    buildCommand: python -m zipfile -e app-source-v2.zip . && pip install -r Atelie_Gestao_Pilates/requirements.txt
     startCommand: python Atelie_Gestao_Pilates/app.py
     healthCheckPath: /healthz
     envVars:
