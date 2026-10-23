@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: atelie-gestao-pilates
+    runtime: python
+    plan: free
+    buildCommand: python -m zipfile -e app-source.zip . && pip install -r Atelie_Gestao_Pilates/requirements.txt
+    startCommand: python Atelie_Gestao_Pilates/app.py
+    healthCheckPath: /healthz
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: APP_USERNAME
+        sync: false
+      - key: APP_PASSWORD
+        sync: false
